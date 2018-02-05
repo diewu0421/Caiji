@@ -9,14 +9,40 @@
     <style>
 
         .container h1{
-            font-size: 14em;
+            font-size: 15px;
             width: 448px;
             margin:0 auto;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 <div class="container"><h1>菜鸡</h1></div>
+<script>
+    var container = document.getElementsByClassName("container")[0];
+    var h1 = container.firstChild;
+    console.log(h1);
 
+//    h1.style.fontSize = "14em";
+//    function bigger(size) {
+//        h1.style.fontSize = size + "em";
+//    }
+//
+//    requestAnimationFrame(bigger);
+    var gloSize = 11;
+    var change  = 1;
+
+    setInterval(function () {
+        h1.style.fontSize = gloSize + "px";
+        console.log(h1.style.fontSize);
+
+        gloSize += change;
+        if (gloSize >= 150 || gloSize <= 11) {
+            change = -change;
+        }
+
+    }, 10, gloSize);
+
+</script>
 </body>
 </html>
